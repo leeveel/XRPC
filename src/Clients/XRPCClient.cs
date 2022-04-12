@@ -9,6 +9,7 @@ using System.Linq;
 using BeetleX.Dispatchs;
 using EventNext;
 using System.Net.Security;
+using BeetleX.Proxy;
 
 namespace BeetleX.XRPC.Clients
 {
@@ -222,7 +223,7 @@ namespace BeetleX.XRPC.Clients
 
         public T Create<T>(string actorID = null)
         {
-            object result = DispatchProxy.Create<T, XRPCClientDispatch>();
+            object result = XDispatchProxy.Create<T, XRPCClientDispatch>();
             XRPCClientDispatch dispatch = ((XRPCClientDispatch)result);
             dispatch.Client = this;
             dispatch.Actor = actorID;

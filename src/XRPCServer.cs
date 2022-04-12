@@ -8,6 +8,7 @@ using System.Collections.Concurrent;
 using System.Threading.Tasks;
 using BeetleX.XRPC.Clients;
 using BeetleX.XRPC.Events;
+using BeetleX.Proxy;
 
 namespace BeetleX.XRPC
 {
@@ -478,7 +479,7 @@ namespace BeetleX.XRPC
             object result = session[key];
             if (result == null)
             {
-                result = DispatchProxy.Create<T, XRPCSeverInvokeClientDispatch>();
+                result = XDispatchProxy.Create<T, XRPCSeverInvokeClientDispatch>();
                 XRPCSeverInvokeClientDispatch dispatch = ((XRPCSeverInvokeClientDispatch)result);
                 dispatch.Session = session;
                 dispatch.Server = this;

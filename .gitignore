@@ -94,3 +94,5 @@ samples/XRPC.DelegateInvoke/Client/obj/
 samples/XRPC.DelegateInvoke/packages/
 samples/XRPC.DelegateInvoke/Server/bin/
 samples/XRPC.DelegateInvoke/Server/obj/
+/app_debug
+/BeetleX.Proxy/obj

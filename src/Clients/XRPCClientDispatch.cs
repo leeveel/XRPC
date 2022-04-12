@@ -1,4 +1,5 @@
 ﻿using BeetleX.Clients;
+using BeetleX.Proxy;
 using EventNext;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace BeetleX.XRPC.Clients
     }
 
 
-    public class XRPCClientDispatch : DispatchProxy, EventNext.IHeader,INetClient
+    public class XRPCClientDispatch : XDispatchProxy, EventNext.IHeader,INetClient
     {
 
         private Dictionary<string, ClientActionHandler> mHandlers = new Dictionary<string, ClientActionHandler>();

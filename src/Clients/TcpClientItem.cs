@@ -33,7 +33,7 @@ namespace BeetleX.XRPC.Clients
                     request.Url = "/__System/Ping";
                     var response = await XRPCClient.SendWait(request, TcpClient, null);
                 }
-                catch (Exception e_)
+                catch (Exception)
                 {
                     mPingError++;
                     if (mPingError > 3)
